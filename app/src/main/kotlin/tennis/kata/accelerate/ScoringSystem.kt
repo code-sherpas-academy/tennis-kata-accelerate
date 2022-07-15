@@ -16,27 +16,31 @@ class ScoringSystem(
         if (scorePlayer1 <= 3 && scorePlayer2 < 3 ||
             scorePlayer1 < 3 && scorePlayer2 <= 3) {
             score = "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
-        } else if(scorePlayer1 >= 3 && scorePlayer2 >= 3) {
-            if(scorePlayer1 == scorePlayer2) {
-                score = Score.DEUCE.value
-            } else if (scorePlayer1 > scorePlayer2) {
-
-                if (scorePlayer1 - scorePlayer2 == 1) {
-                    score = "${Score.ADVANTAGE.value}:40"
-                } else if (scorePlayer1 - scorePlayer2 == 2) {
-                    score = "Player 1 wins the GAME"
-                }
-
-            } else {
-                if (scorePlayer2 - scorePlayer1 == 1) {
-                    score = "40:${Score.ADVANTAGE.value}"
-                } else if (scorePlayer2 - scorePlayer1 == 2) {
-                    score = "Player 2 wins the GAME"
-                }
-            }
-        }
+        } else if(scorePlayer1 >= 3 && scorePlayer2 >= 3) score = higherScoreCalculation(score)
 
         return score
+    }
+
+    private fun higherScoreCalculation(score: String): String {
+        var score1 = score
+        if (scorePlayer1 == scorePlayer2) {
+            score1 = Score.DEUCE.value
+        } else if (scorePlayer1 > scorePlayer2) {
+
+            if (scorePlayer1 - scorePlayer2 == 1) {
+                score1 = "${Score.ADVANTAGE.value}:40"
+            } else if (scorePlayer1 - scorePlayer2 == 2) {
+                score1 = "Player 1 wins the GAME"
+            }
+
+        } else {
+            if (scorePlayer2 - scorePlayer1 == 1) {
+                score1 = "40:${Score.ADVANTAGE.value}"
+            } else if (scorePlayer2 - scorePlayer1 == 2) {
+                score1 = "Player 2 wins the GAME"
+            }
+        }
+        return score1
     }
 
     private fun singleScoreToString(score: Int): String {
