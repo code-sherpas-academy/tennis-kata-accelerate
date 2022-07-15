@@ -18,18 +18,18 @@ class ScoringSystem(
             score = "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
         } else if(scorePlayer1 >= 3 && scorePlayer2 >= 3) {
             if(scorePlayer1 == scorePlayer2) {
-                score = "DEUCE"
+                score = Score.DEUCE.value
             } else if (scorePlayer1 > scorePlayer2) {
 
                 if (scorePlayer1 - scorePlayer2 == 1) {
-                    score = "ADVANTADGE:40"
+                    score = "${Score.ADVANTAGE.value}:40"
                 } else if (scorePlayer1 - scorePlayer2 == 2) {
                     score = "Player 1 wins the GAME"
                 }
 
             } else {
                 if (scorePlayer2 - scorePlayer1 == 1) {
-                    score = "40:ADVANTADGE"
+                    score = "40:${Score.ADVANTAGE.value}"
                 } else if (scorePlayer2 - scorePlayer1 == 2) {
                     score = "Player 2 wins the GAME"
                 }
@@ -51,6 +51,10 @@ class ScoringSystem(
 
 
 
+}
+
+enum class Score(var value: String) {
+    DEUCE("DEUCE"), ADVANTAGE("ADVANTAGE")
 }
 
 enum class Player {

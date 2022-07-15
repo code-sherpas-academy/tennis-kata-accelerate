@@ -1,7 +1,6 @@
 package tennis.kata.accelerate
 
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 internal class ScoringSystemTest {
@@ -80,7 +79,7 @@ internal class ScoringSystemTest {
 
         scoringSystem.winnerForBall(Player.ONE)
 
-        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("ADVANTADGE:40")
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("ADVANTAGE:40")
     }
 
     @Test
@@ -116,6 +115,6 @@ internal class ScoringSystemTest {
 
         scoringSystem.winnerForBall(Player.TWO)
 
-        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("40:ADVANTADGE")
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("40:ADVANTAGE")
     }
 }
