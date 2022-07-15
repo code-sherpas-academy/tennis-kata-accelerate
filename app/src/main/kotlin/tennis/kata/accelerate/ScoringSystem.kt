@@ -13,14 +13,14 @@ class ScoringSystem(
 
     fun currentScore(): String {
         if (scorePlayer1 <= 3 && scorePlayer2 <= 3) {
-            return "${singleScoreToString(scorePlayer1)}: ${singleScoreToString(scorePlayer2)}"
+            return "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
         } else if(scorePlayer1 > 3 && scorePlayer2 > 3) {
             if(scorePlayer1 == scorePlayer2) {
                 return "DEUCE"
             } else if (scorePlayer1 > scorePlayer2) {
 
                 if (scorePlayer1 - scorePlayer2 == 1) {
-                    return "ADVANTADGE: 40"
+                    return "ADVANTADGE:40"
                 } else if (scorePlayer1 - scorePlayer2 == 2) {
                     return "Player 1 wins the GAME"
                 }
@@ -34,12 +34,11 @@ class ScoringSystem(
             }
         }
 
-        return "${singleScoreToString(scorePlayer1)}: ${singleScoreToString(scorePlayer2)}"
+        return "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
 
     }
 
     private fun singleScoreToString(score: Int): String {
-
         return if (score == 0) "LOVE"
         else if (score == 1) "15"
         else if (score == 2) "30"
@@ -47,6 +46,7 @@ class ScoringSystem(
 
         else throw UnsupportedOperationException()
     }
+
 
 
 }
