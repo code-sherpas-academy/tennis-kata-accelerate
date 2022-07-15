@@ -27,4 +27,13 @@ internal class ScoringSystemTest {
 
         Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("LOVE:15")
     }
+
+    @Test
+    fun `previous score 30-40 and player one wins then current score is DEUCE`() {
+        val scoringSystem = ScoringSystem(2, 3)
+
+        scoringSystem.winnerForBall(Player.ONE)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("DEUCE")
+    }
 }

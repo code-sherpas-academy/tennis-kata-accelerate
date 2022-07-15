@@ -12,9 +12,9 @@ class ScoringSystem(
     }
 
     fun currentScore(): String {
-        if (scorePlayer1 <= 3 && scorePlayer2 <= 3) {
+        if (scorePlayer1 < 3 && scorePlayer2 < 3) {
             return "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
-        } else if(scorePlayer1 > 3 && scorePlayer2 > 3) {
+        } else if(scorePlayer1 >= 3 && scorePlayer2 >= 3) {
             if(scorePlayer1 == scorePlayer2) {
                 return "DEUCE"
             } else if (scorePlayer1 > scorePlayer2) {
@@ -35,7 +35,6 @@ class ScoringSystem(
         }
 
         return "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
-
     }
 
     private fun singleScoreToString(score: Int): String {
