@@ -12,29 +12,30 @@ class ScoringSystem(
     }
 
     fun currentScore(): String {
+        var score: String = ""
         if (scorePlayer1 < 3 && scorePlayer2 < 3) {
-            return "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
+            score = "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
         } else if(scorePlayer1 >= 3 && scorePlayer2 >= 3) {
             if(scorePlayer1 == scorePlayer2) {
-                return "DEUCE"
+                score = "DEUCE"
             } else if (scorePlayer1 > scorePlayer2) {
 
                 if (scorePlayer1 - scorePlayer2 == 1) {
-                    return "ADVANTADGE:40"
+                    score = "ADVANTADGE:40"
                 } else if (scorePlayer1 - scorePlayer2 == 2) {
-                    return "Player 1 wins the GAME"
+                    score = "Player 1 wins the GAME"
                 }
 
             } else {
                 if (scorePlayer2 - scorePlayer1 == 1) {
-                    return "40:ADVANTADGE"
+                    score = "40:ADVANTADGE"
                 } else if (scorePlayer2 - scorePlayer1 == 2) {
-                    return "Player 2 wins the GAME"
+                    score = "Player 2 wins the GAME"
                 }
             }
         }
 
-        return "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
+        return score
     }
 
     private fun singleScoreToString(score: Int): String {
