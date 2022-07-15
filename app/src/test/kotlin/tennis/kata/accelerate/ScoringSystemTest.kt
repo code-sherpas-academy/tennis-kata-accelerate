@@ -36,4 +36,40 @@ internal class ScoringSystemTest {
 
         Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("DEUCE")
     }
+
+    @Test
+    fun `previous score 40-40 and player one wins then current score is ADVANTADGE-40`() {
+        val scoringSystem = ScoringSystem(3, 3)
+
+        scoringSystem.winnerForBall(Player.ONE)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("ADVANTADGE:40")
+    }
+
+    @Test
+    fun `previous score ADVANTADGE-40 and player one wins then Player 1 wins the GAME`() {
+        val scoringSystem = ScoringSystem(4, 3)
+
+        scoringSystem.winnerForBall(Player.ONE)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("Player 1 wins the GAME")
+    }
+
+    @Test
+    fun `previous score 40-ADVANTADGE and player two wins then Player 2 wins the GAME`() {
+        val scoringSystem = ScoringSystem(3, 4)
+
+        scoringSystem.winnerForBall(Player.TWO)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("Player 2 wins the GAME")
+    }
+
+    @Test
+    fun `previous score 4-5 and player one wins then current score is DEUCE`() {
+        val scoringSystem = ScoringSystem(4, 5)
+
+        scoringSystem.winnerForBall(Player.ONE)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("DEUCE")
+    }
 }
