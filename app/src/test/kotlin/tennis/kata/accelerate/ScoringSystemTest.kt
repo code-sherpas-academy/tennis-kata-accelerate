@@ -1,6 +1,7 @@
 package tennis.kata.accelerate
 
 import org.assertj.core.api.Assertions
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 internal class ScoringSystemTest {
@@ -44,6 +45,24 @@ internal class ScoringSystemTest {
         scoringSystem.winnerForBall(Player.TWO)
 
         Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("LOVE:15")
+    }
+
+    @Test
+    fun `when previous score LOVE-15 and player two wins then current score is LOVE-30`() {
+        val scoringSystem = ScoringSystem(0, 1)
+
+        scoringSystem.winnerForBall(Player.TWO)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("LOVE:30")
+    }
+
+    @Test
+    fun `when previous score LOVE-30 and player two wins then current score is LOVE-40`() {
+        val scoringSystem = ScoringSystem(0, 2)
+
+        scoringSystem.winnerForBall(Player.TWO)
+
+        Assertions.assertThat(scoringSystem.currentScore()).isEqualTo("LOVE:40")
     }
 
     @Test

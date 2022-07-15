@@ -13,7 +13,7 @@ class ScoringSystem(
 
     fun currentScore(): String {
         var score: String = ""
-        if (scorePlayer1 < 3 && scorePlayer2 < 3 || scorePlayer1 <= 3 && scorePlayer2 < 3) {
+        if (scorePlayer1 < 3 && scorePlayer2 < 3 || scorePlayer1 <= 3 && scorePlayer2 < 3 || scorePlayer1 < 3 && scorePlayer2 <= 3) {
             score = "${singleScoreToString(scorePlayer1)}:${singleScoreToString(scorePlayer2)}"
         } else if(scorePlayer1 >= 3 && scorePlayer2 >= 3) {
             if(scorePlayer1 == scorePlayer2) {
