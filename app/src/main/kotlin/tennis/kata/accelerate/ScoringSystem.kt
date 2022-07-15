@@ -40,12 +40,13 @@ class ScoringSystem(
     }
 
     private fun singleScoreToString(score: Int): String {
-        return if (score == 0) "LOVE"
-        else if (score == 1) "15"
-        else if (score == 2) "30"
-        else if (score == 3) "40"
-
-        else throw UnsupportedOperationException()
+        return when (score) {
+            0 -> "LOVE"
+            1 -> "15"
+            2 -> "30"
+            3 -> "40"
+            else -> throw UnsupportedOperationException()
+        }
     }
 
 
