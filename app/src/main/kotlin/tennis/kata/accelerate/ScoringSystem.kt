@@ -25,7 +25,7 @@ class ScoringSystem(
                     return "Player 1 wins the GAME"
                 }
 
-            } else if (scorePlayer1 < scorePlayer2) {
+            } else {
                 if (scorePlayer2 - scorePlayer1 == 1) {
                     return "40:ADVANTADGE"
                 } else if (scorePlayer2 - scorePlayer1 == 2) {
