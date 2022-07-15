@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test
 internal class ScoringSystemTest {
 
     @Test
-    fun `0-0 is LOVE-LOVE`() {
+    fun `initial score is LOVE-LOVE`() {
         Assertions.assertThat(ScoringSystem(0, 0).currentScore()).isEqualTo("LOVE:LOVE")
     }
 
     @Test
-    fun `0-0 then 15-LOVE`() {
+    fun `previous score LOVE-LOVE and player one wins then current score is 15-LOVE`() {
         val scoringSystem = ScoringSystem(0, 0)
 
         scoringSystem.winnerForBall(Player.ONE)
@@ -20,7 +20,7 @@ internal class ScoringSystemTest {
     }
 
     @Test
-    fun `0-0 then LOVE-15`() {
+    fun `previous score LOVE-LOVE and player two wins then current score is LOVE-15`() {
         val scoringSystem = ScoringSystem(0, 0)
 
         scoringSystem.winnerForBall(Player.TWO)
