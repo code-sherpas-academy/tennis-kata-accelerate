@@ -4,6 +4,11 @@
 package tennis.kata.accelerate
 
 class TennisGame {
+    private var player1Score = "LOVE"
+    private var player2Score = "LOVE"
+    fun score(): String {
+        return "$player1Score-$player2Score"
+    }
 
 }
 

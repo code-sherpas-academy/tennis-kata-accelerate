@@ -3,9 +3,14 @@
  */
 package tennis.kata.accelerate
 
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 class TennisGameTest {
+
+    @Test
+    fun `initial score is LOVE-LOVE`() {
+        assertThat(TennisGame().score()).isEqualTo("LOVE-LOVE")
+    }
 
 }
