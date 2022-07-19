@@ -10,7 +10,14 @@ class TennisGameTest {
 
     @Test
     fun `initial score is LOVE-LOVE`() {
-        assertThat(TennisGame().score()).isEqualTo("LOVE-LOVE")
+        assertThat(TennisGame("LOVE", "LOVE").score()).isEqualTo("LOVE-LOVE")
+    }
+
+    @Test
+    fun `given current score is LOVE-LOVE, when player1 wins then score should be 15-LOVE`() {
+        var tennisGame = TennisGame("LOVE", "LOVE")
+        tennisGame = tennisGame.player1WinsBall()
+        assertThat(tennisGame.score()).isEqualTo("15-LOVE")
     }
 
 }

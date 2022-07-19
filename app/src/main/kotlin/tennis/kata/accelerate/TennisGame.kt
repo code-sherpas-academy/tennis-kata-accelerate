@@ -3,11 +3,13 @@
  */
 package tennis.kata.accelerate
 
-class TennisGame {
-    private var player1Score = "LOVE"
-    private var player2Score = "LOVE"
+data class TennisGame(private val player1Score: String, private val player2score: String) {
     fun score(): String {
-        return "$player1Score-$player2Score"
+        return "${this.player1Score}-$player2score"
+    }
+
+    fun player1WinsBall(): TennisGame {
+        return this.copy(player1Score = "15")
     }
 
 }
