@@ -10,4 +10,9 @@ class FizzBuzzTest {
     Assertions.assertThat(fizzBuzz(3)).isEqualTo("Fizz")
   }
 
+  @Test
+  fun multiplesOfFiveAreConvertedToBuzz() {
+    Assertions.assertThat(fizzBuzz(5)).isEqualTo("Buzz")
+  }
+
 }
