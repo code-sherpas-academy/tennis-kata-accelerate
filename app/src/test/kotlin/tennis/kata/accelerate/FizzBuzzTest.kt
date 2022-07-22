@@ -17,4 +17,9 @@ class FizzBuzzTest {
     Assertions.assertThat(fizzBuzz(number)).isEqualTo("Buzz")
   }
 
+  @ParameterizedTest
+  @CsvSource("15, 30, 45, 60")
+  fun multiplesOf15AreConvertedToFizzBuzz(number: Int) {
+    Assertions.assertThat(fizzBuzz(number)).isEqualTo("FizzBuzz")
+  }
 }
