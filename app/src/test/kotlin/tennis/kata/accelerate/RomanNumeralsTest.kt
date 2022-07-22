@@ -6,17 +6,15 @@ import org.junit.jupiter.api.Test
 class RomanNumeralsTest {
 
     @Test
-    fun `1 is converted to I`() {
+    fun `1, 2, 3 are converted to I, II, III`() {
         Assertions.assertThat(arabicToRomanNumeral(1)).isEqualTo("I")
-    }
-
-    @Test
-    fun `2 is converted to II`() {
         Assertions.assertThat(arabicToRomanNumeral(2)).isEqualTo("II")
+        Assertions.assertThat(arabicToRomanNumeral(3)).isEqualTo("III")
     }
 
     private fun arabicToRomanNumeral(arabic: Int): String {
         if (arabic == 1) return "I"
-        return "II"
+        if (arabic == 2) return "II"
+        return "III"
     }
 }
