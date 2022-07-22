@@ -22,4 +22,10 @@ class FizzBuzzTest {
   fun multiplesOf15AreConvertedToFizzBuzz(number: Int) {
     Assertions.assertThat(fizzBuzz(number)).isEqualTo("FizzBuzz")
   }
+
+  @ParameterizedTest
+  @CsvSource("1,2,4,7,8,11")
+  fun normalNumbersAreNotConverted(number: Int) {
+    Assertions.assertThat(fizzBuzz(number)).isEqualTo(number.toString())
+  }
 }
