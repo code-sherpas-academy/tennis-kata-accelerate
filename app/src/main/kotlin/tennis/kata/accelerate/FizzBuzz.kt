@@ -5,3 +5,8 @@ fun fizzBuzz(number: Int): String {
 
     return "Buzz"
 }
+
+fun main() {
+    (1..100)
+        .forEach { number -> println(fizzBuzz(number)) }
+}
