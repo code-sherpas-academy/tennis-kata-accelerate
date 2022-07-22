@@ -10,7 +10,4 @@ class FizzBuzzTest {
     Assertions.assertThat(fizzBuzz(3)).isEqualTo("Fizz")
   }
 
-  private fun fizzBuzz(number: Int): String {
-    return "Fizz"
-  }
 }
