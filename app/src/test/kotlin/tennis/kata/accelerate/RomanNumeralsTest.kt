@@ -17,10 +17,20 @@ class RomanNumeralsTest {
         Assertions.assertThat(arabicToRomanNumeral(5)).isEqualTo("V")
     }
 
+    @Test
+    fun `6, 7 and 8 are converted to VI, VII and VIII`() {
+        Assertions.assertThat(arabicToRomanNumeral(6)).isEqualTo("VI")
+        Assertions.assertThat(arabicToRomanNumeral(7)).isEqualTo("VII")
+        Assertions.assertThat(arabicToRomanNumeral(8)).isEqualTo("VIII")
+    }
+
     private fun arabicToRomanNumeral(arabic: Int): String {
         if (arabic == 1) return "I"
         if (arabic == 2) return "II"
         if (arabic == 3) return "III"
-        return "V"
+        if (arabic == 5) return "V"
+        if (arabic == 6) return "VI"
+        if (arabic == 7) return "VII"
+        return "VIII"
     }
 }
