@@ -8,5 +8,5 @@ fun fizzBuzz(number: Int): String {
 
 fun main() {
     (1..100)
-        .forEach { number -> println(fizzBuzz(number)) }
+        .forEach { number -> println("$number -> ${fizzBuzz(number)}") }
 }
