@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test
 class FizzBuzzTest {
   @Test
   fun multiplesOfThreeAreConvertedToFizz() {
-
     Assertions.assertThat(fizzBuzz(3)).isEqualTo("Fizz")
   }
 
