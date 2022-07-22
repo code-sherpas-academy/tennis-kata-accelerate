@@ -25,9 +25,13 @@ class RomanNumeralsTest {
     }
 
     private fun arabicToRomanNumeral(arabic: Int): String {
-        if (arabic == 1) return "I"
-        if (arabic == 2) return "II"
-        if (arabic == 3) return "III"
+        var roman = ""
+
+        if (arabic in 1..3) {
+            repeat(arabic) { roman += "I" }
+            return roman
+        }
+
         if (arabic == 5) return "V"
         if (arabic == 6) return "VI"
         if (arabic == 7) return "VII"
