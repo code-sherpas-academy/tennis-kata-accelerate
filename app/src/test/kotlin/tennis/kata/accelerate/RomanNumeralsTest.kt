@@ -12,9 +12,15 @@ class RomanNumeralsTest {
         Assertions.assertThat(arabicToRomanNumeral(3)).isEqualTo("III")
     }
 
+    @Test
+    fun `5 is converted to V`() {
+        Assertions.assertThat(arabicToRomanNumeral(5)).isEqualTo("V")
+    }
+
     private fun arabicToRomanNumeral(arabic: Int): String {
         if (arabic == 1) return "I"
         if (arabic == 2) return "II"
-        return "III"
+        if (arabic == 3) return "III"
+        return "V"
     }
 }
