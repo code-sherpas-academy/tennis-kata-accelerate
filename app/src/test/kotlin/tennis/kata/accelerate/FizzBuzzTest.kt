@@ -7,6 +7,7 @@ class FizzBuzzTest {
   @Test
   fun multiplesOfThreeAreConvertedToFizz() {
     Assertions.assertThat(fizzBuzz(3)).isEqualTo("Fizz")
+    Assertions.assertThat(fizzBuzz(6)).isEqualTo("Fizz")
   }
 
   @Test

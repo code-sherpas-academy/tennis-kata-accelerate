@@ -1,7 +1,7 @@
 package tennis.kata.accelerate
 
 fun fizzBuzz(number: Int): String {
-    if(number == 3) return "Fizz"
+    if(number % 3 == 0) return "Fizz"
 
     return "Buzz"
 }
