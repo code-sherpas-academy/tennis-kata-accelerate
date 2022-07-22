@@ -10,7 +10,13 @@ class RomanNumeralsTest {
         Assertions.assertThat(arabicToRomanNumeral(1)).isEqualTo("I")
     }
 
+    @Test
+    fun `2 is converted to II`() {
+        Assertions.assertThat(arabicToRomanNumeral(2)).isEqualTo("II")
+    }
+
     private fun arabicToRomanNumeral(arabic: Int): String {
-        return "I"
+        if (arabic == 1) return "I"
+        return "II"
     }
 }
